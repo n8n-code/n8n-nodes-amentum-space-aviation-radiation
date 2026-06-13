@@ -4,32 +4,32 @@ import { routedoseDescription } from './resources/routedose';
 import { parmaDescription } from './resources/parma';
 
 export class AmentumSpaceAviationRadiation implements INodeType {
-	description: INodeTypeDescription = {
-		displayName: 'Amentum Space Aviation Radiation',
-		name: 'N8nDevAmentumSpaceAviationRadiation',
-		icon: { light: 'file:./amentum-space-aviation-radiation.svg', dark: 'file:./amentum-space-aviation-radiation.dark.svg' },
-		group: ['input'],
-		version: 1,
-		subtitle: '={{\$parameter["operation"] + ": " + \$parameter["resource"]}}',
-		description: 'Atmosphere shields from solar and intergalactic high-energy particle radiation.',
-		defaults: { name: 'Amentum Space Aviation Radiation' },
-		usableAsTool: true,
-		inputs: [NodeConnectionTypes.Main],
-		outputs: [NodeConnectionTypes.Main],
-		credentials: [
-			{
-				name: 'N8nDevAmentumSpaceAviationRadiationApi',
-				required: true,
-			},
-		],
-		requestDefaults: {
-			baseURL: '={{\$credentials.url}}',
-			headers: {
-				Accept: 'application/json',
-				'Content-Type': 'application/json',
-			},
-		},
-		properties: [
+        description: INodeTypeDescription = {
+                displayName: 'Amentum Space Aviation Radiation',
+                name: 'N8nDevAmentumSpaceAviationRadiation',
+                icon: { light: 'file:./amentum-space-aviation-radiation.svg', dark: 'file:./amentum-space-aviation-radiation.dark.svg' },
+                group: ['input'],
+                version: 1,
+                subtitle: '={{\$parameter["operation"] + ": " + \$parameter["resource"]}}',
+                description: 'Atmosphere shields from solar and intergalactic high-energy particle radiation.',
+                defaults: { name: 'Amentum Space Aviation Radiation' },
+                usableAsTool: true,
+                inputs: [NodeConnectionTypes.Main],
+                outputs: [NodeConnectionTypes.Main],
+                credentials: [
+                        {
+                                name: 'N8nDevAmentumSpaceAviationRadiationApi',
+                                required: true,
+                        },
+                ],
+                requestDefaults: {
+                        baseURL: '={{\$credentials.url}}',
+                        headers: {
+                                Accept: 'application/json',
+                                'Content-Type': 'application/json',
+                        },
+                },
+                properties: [
 		{
 			"displayName": "Resource",
 			"name": "resource",
@@ -57,6 +57,6 @@ export class AmentumSpaceAviationRadiation implements INodeType {
 		...cari7Description,
 		...routedoseDescription,
 		...parmaDescription
-		],
-	};
+                ],
+        };
 }
